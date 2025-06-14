@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Share Leslie Singer's Digital Business Card</title>
+  <link rel="manifest" href="/manifest.json" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -167,7 +168,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="logo">ADS 4 U</div>
     <div class="socials">
@@ -177,7 +177,6 @@
     </div>
   </header>
 
-  <!-- Card -->
   <div class="card">
     <a href="https://ads4u.store/leslie-business-card/" target="_blank">
       <img src="LES Digital BC (1).png" alt="Leslie Singer" class="avatar" />
@@ -200,10 +199,15 @@
       Share via SMS
     </a>
 
+    <!-- Add to Home Screen Button -->
+    <a id="a2hs-btn" class="btn" style="display:none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Add Icon">
+      Add to Home Screen
+    </a>
+
     <a href="https://ads4u.store/leslie-business-card/" class="return">← Return to Main Page</a>
   </div>
 
-  <!-- QR Code -->
   <div class="qr-section">  
     <p style="color: #030000; font-size: 16px; margin-bottom: 12px;">
       Prefer scanning? Access the digital card here:
@@ -223,8 +227,9 @@
     </p>
   </div>
 
-  <!-- Clipboard Copy Script -->
+  <!-- Scripts -->
   <script>
+    // Copy to clipboard
     function copyLink(event) {
       event.preventDefault();
       const link = "https://ads4u.store/leslie-business-card/";
@@ -232,7 +237,29 @@
         alert("Card link copied to clipboard!");
       });
     }
-  </script>
 
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+
+    // Add to Home Screen logic
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const a2hsBtn = document.getElementById('a2hs-btn');
+      if (a2hsBtn) {
+        a2hsBtn.style.display = 'flex';
+        a2hsBtn.addEventListener('click', () => {
+          a2hsBtn.style.display = 'none';
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(() => {
+            deferredPrompt = null;
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
