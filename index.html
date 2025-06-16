@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Share Leslie Singer's Digital Business Card</title>
-  <link rel="manifest" href="/manifest.json">
-  <link rel="apple-touch-icon" href="LES Digital BC (1).png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffffff"/>
+  <link rel="apple-touch-icon" href="lessbc.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background: #f7f7f7;
@@ -19,6 +25,7 @@
       min-height: 100vh;
       padding: 20px;
     }
+
     header {
       width: 100%;
       max-width: 800px;
@@ -31,12 +38,23 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       margin-bottom: 30px;
     }
-    .logo { font-size: 20px; font-weight: 600; color: #000; }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+    }
+
     .socials img {
-      width: 24px; height: 24px; margin-left: 14px;
+      width: 24px;
+      height: 24px;
+      margin-left: 14px;
       transition: transform 0.2s ease;
     }
-    .socials img:hover { transform: scale(1.1); }
+
+    .socials img:hover {
+      transform: scale(1.1);
+    }
 
     .card {
       background: white;
@@ -48,22 +66,35 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       animation: fadeIn 0.5s ease;
     }
+
     .avatar {
-      width: 100px; height: 100px; object-fit: cover;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
       border-radius: 50%;
       margin-bottom: 20px;
       border: 2px solid #ccc;
       transition: transform 0.2s ease;
     }
-    .avatar:hover { transform: scale(1.05); }
 
-    h2 { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
+    .avatar:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
 
     .btn {
-      display: flex; align-items: center; justify-content: flex-start;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       gap: 12px;
       width: 100%;
-      background: #000; color: white;
+      background: #000;
+      color: white;
       padding: 12px 16px;
       margin-bottom: 14px;
       border-radius: 10px;
@@ -72,14 +103,22 @@
       font-weight: 500;
       transition: transform 0.2s ease, background 0.3s ease;
     }
-    .btn:hover { background: #333; transform: scale(1.02); }
+
+    .btn:hover {
+      background: #333;
+      transform: scale(1.02);
+    }
+
     .btn img {
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       filter: invert(1);
     }
+
     .return {
       margin-top: 25px;
       text-decoration: none;
+      display: inline-block;
       font-size: 14px;
       color: #0073e6;
       font-weight: 500;
@@ -90,6 +129,7 @@
       text-align: center;
       padding: 0 20px;
     }
+
     .qr-wrapper {
       display: inline-block;
       padding: 12px;
@@ -99,28 +139,57 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       margin-left: 20px;
     }
+
     .qr-wrapper:hover {
       transform: scale(1.05);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
     }
-    .qr-wrapper img { width: 160px; height: 160px; border-radius: 12px; }
+
+    .qr-wrapper img {
+      width: 160px;
+      height: 160px;
+      border-radius: 12px;
+    }
 
     @media screen and (max-width: 480px) {
-      .qr-wrapper { margin-left: 0; }
-      .qr-wrapper img { width: 140px; height: 140px; }
+      .qr-wrapper {
+        margin-left: 0;
+      }
+
+      .qr-wrapper img {
+        width: 140px;
+        height: 140px;
+      }
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    #installButton {
+      display: none;
+      margin-top: 20px;
+      background: #000;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 0 10px white;
+    }
+
+    #installButton.show {
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="logo">ADS 4 U</div>
+    <a href="https://ads4u.store/" class="logo" style="text-decoration: none;">ADS 4 U</a>
     <div class="socials">
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968815.png" alt="TikTok"></a>
       <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
@@ -128,7 +197,6 @@
     </div>
   </header>
 
-  <!-- Card -->
   <div class="card">
     <a href="https://ads4u.store/leslie-business-card/" target="_blank">
       <img src="LES Digital BC (1).png" alt="Leslie Singer" class="avatar" />
@@ -151,26 +219,18 @@
       Share via SMS
     </a>
 
-    <!-- A2HS Button (last button) -->
-    <a id="a2hs-btn" class="btn" style="display: none; cursor: pointer;">
-      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Home Icon">
-      Add to Home Screen
-    </a>
+    <button id="installButton">Add to Home Screen</button>
 
     <a href="https://ads4u.store/leslie-business-card/" class="return">← Return to Main Page</a>
   </div>
 
-  <!-- QR Code -->
-  <div class="qr-section">  
+  <div class="qr-section">
     <p style="color: #030000; font-size: 16px; margin-bottom: 12px;">
       Prefer scanning? Access the digital card here:
     </p>
     <div class="qr-wrapper">
       <a href="https://ads4u.store/leslie-business-card/" target="_blank">
-        <img
-          src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://ads4u.store/leslie-business-card/"
-          alt="Scan QR to open card"
-        />
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://ads4u.store/leslie-business-card/" alt="Scan QR to open card" />
       </a>
     </div>
     <p style="color: #150101; font-size: 14px; margin-top: 8px;">
@@ -178,7 +238,6 @@
     </p>
   </div>
 
-  <!-- Scripts -->
   <script>
     function copyLink(event) {
       event.preventDefault();
@@ -188,26 +247,26 @@
       });
     }
 
-    // Android A2HS
     let deferredPrompt;
-    const a2hsBtn = document.getElementById("a2hs-btn");
+    const installButton = document.getElementById("installButton");
 
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      a2hsBtn.style.display = "flex";
+      installButton.classList.add("show");
 
-      a2hsBtn.addEventListener("click", () => {
-        if (deferredPrompt) {
-          deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(() => {
-            deferredPrompt = null;
-            a2hsBtn.style.display = "none";
-          });
-        }
+      installButton.addEventListener("click", () => {
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then(() => {
+          deferredPrompt = null;
+        });
       });
     });
-  </script>
 
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker Registered'));
+    }
+  </script>
 </body>
 </html>
