@@ -1,21 +1,37 @@
 {
-  "name": "Leslie Singer Business Card",
-  "short_name": "Leslie BC",
-  "start_url": ".",
+  "name": "Leslie Singer - Realtor",
+  "short_name": "Leslie Singer",
+  "start_url": "https://ads4u.store/leslie-business-card/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
-  "description": "Leslie Singer's digital business card",
+  "description": "Leslie Singer's digital business card - Professional Realtor",
+  "scope": "https://ads4u.store/leslie-business-card/",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "lessbc.png",
+      "src": "LES Digital BC (1).png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "lessbc.png",
+      "src": "LES Digital BC (1).png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "LES Digital BC (1).png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "LES Digital BC (1).png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
