@@ -2,12 +2,12 @@
   "name": "Leslie Singer - Realtor",
   "short_name": "Leslie Singer",
   "start_url": "/leslie-business-card/",
+  "scope": "/",
   "display": "standalone",
-  "scope": "/leslie-business-card/",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "description": "Leslie Singer's digital business card - Professional Realtor",
-  "orientation": "portrait",
   "icons": [
     {
       "src": "leslie-192.png",
